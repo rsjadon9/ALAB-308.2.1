@@ -57,3 +57,17 @@ const totalPlantsAfter10WeeksWithoutPruning = 100 * Math.pow(2, 10);
 const totalAreaAfter10WeeksWithoutPruning = totalPlantsAfter10WeeksWithoutPruning * spaceForSinglePlant;
 const radiusOftotalAreaAfter10WeeksWithoutPruning = Math.sqrt(totalAreaAfter10WeeksWithoutPruning / PI);
 console.log(`After 10WeeksWithoutPruning plants ${totalPlantsAfter10WeeksWithoutPruning} area ${totalAreaAfter10WeeksWithoutPruning} radius ${radiusOftotalAreaAfter10WeeksWithoutPruning} `);
+
+
+//Scientists won't listen
+try {
+    const areaFor100Plants = 100 * spaceForSinglePlant;
+    const isAreaRequiredMoreThanAvailable = areaFor100Plants > totalArea;
+    if (isAreaRequiredMoreThanAvailable) {
+        throw "Not enough space Required " + areaFor100Plants + " but only " + totalArea + " is available !";
+    } else {
+        console.log("All good !");
+    }
+} catch (error) {
+    console.log(error);
+}
